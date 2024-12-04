@@ -35,7 +35,6 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-500 to-purple-600">
       <div className="flex w-4/5 max-w-4xl rounded-lg shadow-lg overflow-hidden">
-        {/* Left Side - Welcome Section */}
         <div className="w-1/2 bg-gradient-to-r from-purple-700 to-purple-900 text-white p-10 flex flex-col justify-center items-start">
           <h1 className="text-2xl font-bold mb-4">
             Attendence Management System
@@ -43,7 +42,6 @@ const LoginPage = () => {
           <p className="mt-auto text-sm">www.maxscriptstechnologies.com</p>
         </div>
 
-        {/* Right Side - Sign In Form */}
         <div className="w-1/2 bg-white p-10">
           <h2 className="text-3xl font-bold mb-6 text-gray-700">Sign In</h2>
           <form className="space-y-5">
