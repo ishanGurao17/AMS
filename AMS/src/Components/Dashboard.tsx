@@ -1,15 +1,33 @@
-import { Box, Typography } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  Button,
+  Typography,
+} from "@mui/material";
+import Accordion from "@mui/material/Accordion";
+import Grid from "@mui/material/Grid2";
 import { Carousel } from "antd";
+import React from "react";
 import Marquee from "react-fast-marquee";
+import ReactPlayer from "react-player";
 import "../App.css";
 import { colors } from "../Utils/Colors";
+import accordionData from "../Utils/Data/AccordionData";
 import collegecampus from "../Utils/Images/CollegeCampus.jpg";
 import collegeInfra from "../Utils/Images/CollegeInfra.jpg";
 import image1 from "../Utils/Images/Image1.jpg";
+import studentAdmission from "../Utils/Images/image5.jpg";
 import interaction from "../Utils/Images/interact.jpg";
 import studentActivity from "../Utils/Images/StudentActivity.jpg";
 
 const Dashboard = () => {
+  const [expanded, setExpanded] = React.useState<number | false>(false);
+  const handleChange =
+    (id: number) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? id : false);
+    };
   return (
     <div className="min-h-screen bg-gradient-to-r from-pink-200 to-purple-400 mt-12">
       <Carousel arrows autoplaySpeed={3000} autoplay infinite={true}>
@@ -145,10 +163,11 @@ const Dashboard = () => {
       <div className="bg-gradient-to-r from-pink-500 to-purple-600 p-3">
         <Marquee speed={50} style={{ color: "white" }}>
           Shri Ramdeobaba College of Engineering and Management (RCOEM) is now
-          "Ramdebaba University (RBU)" | New Semester Admissions Open for
+          "Ramdeobaba University (RBU)" | New Semester Admissions Open for
           2024-2025 session
         </Marquee>
       </div>
+
       <Box
         sx={{
           display: "flex",
@@ -232,6 +251,112 @@ const Dashboard = () => {
             with industry associations, and 27 with varied industry players.
           </Typography>
         </Box>
+      </Box>
+
+      <Box>
+        <Grid container spacing={2} sx={{ justifyContent: "flex-start" }}>
+          <Grid
+            sx={{
+              marginLeft: "4rem",
+              width: "35rem",
+            }}
+          >
+            <Typography
+              sx={{ marginBottom: 1.5, fontSize: "1.5rem", fontWeight: "bold" }}
+            >
+              Why Choose To Study In RCOEM?
+            </Typography>
+            {accordionData.map((item) => (
+              <Accordion
+                key={item.id}
+                expanded={expanded === item.id}
+                onChange={handleChange(item.id)}
+                style={{ marginBottom: 4 }}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  sx={{
+                    bgcolor: colors.lightGradientPink,
+                  }}
+                >
+                  {item.summary}
+                </AccordionSummary>
+                <AccordionDetails
+                  sx={{
+                    bgcolor: colors.lighterPurpleAccordion,
+                    color: colors.fontColor,
+                  }}
+                >
+                  {item.details}
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </Grid>
+          <Grid
+            sx={{
+              width: "35rem",
+              marginLeft: 5,
+            }}
+          >
+            <Typography
+              sx={{
+                marginBottom: 1.5,
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                color: colors.fontColor,
+              }}
+            >
+              RCOEM Corporate Film
+            </Typography>
+            <ReactPlayer url="https://youtu.be/3G3H0ROaTJk" />
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Box
+        className="relative flex justify-between items-center px-32 h-[24rem]"
+        sx={{
+          backgroundImage: `url(${studentAdmission})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          marginTop: 1,
+          opacity: 1,
+        }}
+      >
+        <Typography
+          sx={{
+            color: "black",
+            fontWeight: "bold",
+            fontSize: "1.5rem",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          Take the first step of your learning journey
+          <Button
+            sx={{
+              justifyContent: "flex-start",
+              backgroundColor: "black",
+              color: "white",
+              width: "20%",
+            }}
+          >
+            Enroll Today
+          </Button>
+        </Typography>
+      </Box>
+      <Box sx={{ padding: 5 }}>
+        <Typography
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            fontSize: "1.5rem",
+            fontWeight: "bolder",
+          }}
+        >
+          “An investment in knowledge pays the best interest.” – Benjamin
+          Franklin
+        </Typography>
       </Box>
     </div>
   );
