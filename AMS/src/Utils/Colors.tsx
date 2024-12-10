@@ -9,4 +9,5 @@ export const colors = {
   XIconColor: "black",
   fontColor: "#2a3d66",
   lighterPurpleAccordion: "#F8CFF8",
+  activePageColor: "#6a1b9a",
 };

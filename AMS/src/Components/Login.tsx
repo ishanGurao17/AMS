@@ -82,7 +82,7 @@ const LoginPage = () => {
             <button
               type="submit"
               className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold py-3 rounded-lg hover:from-pink-600 hover:to-purple-600 transition-all"
-              onClick={() => navigate("/dashboard")}
+              onClick={() => navigate("/home")}
             >
               Log In <LoginIcon />
             </button>

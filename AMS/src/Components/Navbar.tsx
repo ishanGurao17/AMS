@@ -1,4 +1,3 @@
-// import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
 import {
   AppBar,
   Box,
@@ -9,11 +8,11 @@ import {
   Typography,
 } from "@mui/material";
 import { Tooltip } from "antd";
-import moment from "moment";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { GrInstagram } from "react-icons/gr";
+import { useLocation, useNavigate } from "react-router-dom";
 import { colors } from "../Utils/Colors";
 import rbulogo from "../Utils/Images/rbulogo.png";
 import Sidebar from "./Sidebar";
@@ -26,12 +25,9 @@ interface iIconHovered {
 }
 
 const Navbar = () => {
-  const getCurrentDateandTime = (): string => {
-    return moment().format("DD-MM-YYYY hh:mm:ss");
-  };
-  const [currentDateandTime, setCurrentDateandTime] = useState<string>(
-    getCurrentDateandTime()
-  );
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const [isIconHovered, setIsIconHovered] = useState<iIconHovered>({
     isFaceBook: false,
@@ -44,19 +40,21 @@ const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentDateandTime(getCurrentDateandTime());
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
+  const routes = [
+    { label: "Home", pathname: "/home" },
+    { label: "About Us", pathname: "/aboutUs" },
+    { label: "Academics", pathname: "/academics" },
+    { label: "Placements", pathname: "/placements" },
+    { label: "Gallery", pathname: "/gallery" },
+    { label: "News Events", pathname: "/news-events" },
+    { label: "Admissions", pathname: "/admissions" },
+  ];
   return (
     <div>
       <AppBar
         sx={{
           background: `linear-gradient(to right, ${colors.bgGradientPink}, ${colors.bgGradientPurple})`,
-          height: "3.5rem",
+          height: "3.4rem",
         }}
       >
         <Toolbar
@@ -74,12 +72,7 @@ const Navbar = () => {
               justifyContent: "center",
             }}
           >
-            <IconButton
-              size="medium"
-              color="inherit"
-              sx={{ mr: 1 }}
-              // onClick={handleSidebarToggle}
-            >
+            <IconButton size="medium" color="inherit" sx={{ mr: 1 }}>
               <img
                 src={rbulogo}
                 alt="RCOEM"
@@ -91,6 +84,7 @@ const Navbar = () => {
               Shri Ramdeobaba University
             </Typography>
           </Box>
+
           <Box
             sx={{
               display: "flex",
@@ -98,34 +92,24 @@ const Navbar = () => {
               alignItems: "center",
             }}
           >
-            <Chip
-              label="Home"
-              sx={{ mr: 1, color: "white", fontWeight: "bold" }}
-            />
-            <Chip
-              label="About Us"
-              sx={{ mr: 1, color: "white", fontWeight: "bold" }}
-            />
-            <Chip
-              label="Academics"
-              sx={{ mr: 1, color: "white", fontWeight: "bold" }}
-            />
-            <Chip
-              label="Placements"
-              sx={{ mr: 1, color: "white", fontWeight: "bold" }}
-            />
-            <Chip
-              label="Gallery"
-              sx={{ mr: 1, color: "white", fontWeight: "bold" }}
-            />
-            <Chip
-              label="News & Events"
-              sx={{ mr: 1, color: "white", fontWeight: "bold" }}
-            />
-            <Chip
-              label="Admissions"
-              sx={{ mr: 1, color: "white", fontWeight: "bold" }}
-            />
+            {routes.map((route) => {
+              const isActive = location.pathname === route.pathname;
+              return (
+                <Chip
+                  label={route.label}
+                  sx={{
+                    mr: 1,
+                    color: "white",
+                    fontWeight: "bold",
+                    backgroundColor: isActive
+                      ? colors.activePageColor
+                      : "transparent",
+                  }}
+                  onClick={() => navigate(route.pathname)}
+                />
+              );
+            })}
+
             <Divider
               orientation="vertical"
               flexItem
@@ -233,15 +217,6 @@ const Navbar = () => {
               </Tooltip>
             </Typography>
           </Box>
-          {/* <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <CalendarMonthIcon style={{ marginRight: 10 }} />
-            {currentDateandTime}
-          </Box> */}
         </Toolbar>
       </AppBar>
       <Sidebar isOpen={isSidebarOpen} onClose={handleSidebarToggle} />

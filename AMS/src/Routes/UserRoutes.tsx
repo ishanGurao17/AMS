@@ -1,14 +1,22 @@
 import { Route, Routes } from "react-router-dom";
-import LoginPage from "../Components/Login";
-import Layout from "../Components/Layout";
+import AboutUs from "../Components/AboutUs";
 import Dashboard from "../Components/Dashboard";
+import Layout from "../Components/Layout";
+import LoginPage from "../Components/Login";
 
 const UserRoute = () => {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
-      <Route element={<Layout/>}>
-        <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route element={<Layout />}>
+        <Route path="/home" element={<Dashboard />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
+        {/*
+        <Route path="/academics" element={<Academics />} />
+        <Route path="/placements" element={<Placements />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/news-events" element={<NewsEvents />} />
+        <Route path="/admissions" element={<Admissions />} /> */}
       </Route>
     </Routes>
   );
