@@ -17,7 +17,7 @@ export default function CommonCard({
         padding: 3,
         backgroundColor: "#f9f9f9",
         borderRadius: "8px",
-        boxShadow: 3,
+        boxShadow: 5,
         textAlign: "center",
       }}
     >

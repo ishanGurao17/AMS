@@ -14,6 +14,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { GrInstagram } from "react-icons/gr";
 import { useLocation, useNavigate } from "react-router-dom";
 import { colors } from "../Utils/Colors";
+import routes from "../Utils/Data/RouteData";
 import rbulogo from "../Utils/Images/rbulogo.png";
 import Sidebar from "./Sidebar";
 
@@ -40,15 +41,6 @@ const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const routes = [
-    { label: "Home", pathname: "/home" },
-    { label: "About Us", pathname: "/aboutUs" },
-    { label: "Academics", pathname: "/academics" },
-    { label: "Placements", pathname: "/placements" },
-    { label: "Gallery", pathname: "/gallery" },
-    { label: "News Events", pathname: "/news-events" },
-    { label: "Admissions", pathname: "/admissions" },
-  ];
   return (
     <div>
       <AppBar
