@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.table-row:hover {
+  background-color: #7c3aed;
+  color: white;
+}
+
+.table-row:hover td {
+  color: white;
+}
