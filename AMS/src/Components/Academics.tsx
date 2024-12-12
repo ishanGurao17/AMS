@@ -36,6 +36,7 @@ const Academics = () => {
         >
           ACADEMICS
         </Typography>
+
         <Typography sx={{ color: colors.fontColor }}>
           All UG and PG programs are affiliated to Rashtrasant Tukadoji Maharaj
           Nagpur University Nagpur (RTMNU) College name is listed in the list of

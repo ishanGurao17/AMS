@@ -16,11 +16,12 @@ const AboutUs = () => {
             fontWeight: "bold",
             color: colors.fontColor,
             fontSize: "1.3rem",
-            marginBottom: 0.5,
+            marginBottom: 0.1,
           }}
         >
           ABOUT US
         </Typography>
+
         <Typography sx={{ color: colors.fontColor }}>
           <b>Shri Ramdeobaba College of Engineering and Management </b>(RCOEM)
           is a premier institution founded by the{" "}
