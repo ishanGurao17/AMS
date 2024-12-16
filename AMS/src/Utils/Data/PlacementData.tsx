@@ -13,6 +13,44 @@ import companiesVisited from "../Images/CompaniesVisited.png";
 import highestStipend from "../Images/HighestStipend.png";
 import indytryInternship from "../Images/industryInternship.png";
 import jobHigherStudy from "../Images/jobHigherStudy.png";
+import ABInBev from "../Images/OurRecruiters/ABInBev.png";
+import Accenture from "../Images/OurRecruiters/Accenture.png";
+import AccoliteDigital from "../Images/OurRecruiters/AccoliteDigital.png";
+import Adani from "../Images/OurRecruiters/Adani.png";
+import Afcons from "../Images/OurRecruiters/Afcons.png";
+import Amadeus from "../Images/OurRecruiters/Amadeus.png";
+import Amazon from "../Images/OurRecruiters/Amazon.png";
+import Amdocs from "../Images/OurRecruiters/Amdocs.png";
+import Aujas from "../Images/OurRecruiters/Aujas.png";
+import Aveva from "../Images/OurRecruiters/AVEVA.png";
+import BirlaSoft from "../Images/OurRecruiters/BirlaSoft.png";
+import BNYMellon from "../Images/OurRecruiters/BNYMellon.png";
+import Bosch from "../Images/OurRecruiters/Bosch.png";
+import Bristlecone from "../Images/OurRecruiters/Bristlecone.png";
+import CandRSoftware from "../Images/OurRecruiters/CandRSoftware.png";
+import Capgemini from "../Images/OurRecruiters/Capgemini.png";
+import Ceat from "../Images/OurRecruiters/Ceat.png";
+import Cerium from "../Images/OurRecruiters/Cerium.png";
+import Cisco from "../Images/OurRecruiters/Cisco.png";
+import Cognizant from "../Images/OurRecruiters/Cognizant.png";
+import Cybage from "../Images/OurRecruiters/Cybage.png";
+import DarwinBox from "../Images/OurRecruiters/DarwinBox.png";
+import DassaulSystem from "../Images/OurRecruiters/DassaultSystems.png";
+import Datametica from "../Images/OurRecruiters/Datametica.png";
+import Decode from "../Images/OurRecruiters/Decode.png";
+import Deloitte from "../Images/OurRecruiters/Deloitte.png";
+import DEShaw from "../Images/OurRecruiters/DEShaw.png";
+import Devtron from "../Images/OurRecruiters/Devtron.png";
+import DXC from "../Images/OurRecruiters/DXCTechnology.png";
+import Eaton from "../Images/OurRecruiters/Eaton.png";
+import EdgeVerve from "../Images/OurRecruiters/EdgeVerve.png";
+import EinfoChips from "../Images/OurRecruiters/EInfoChips.png";
+import Emerson from "../Images/OurRecruiters/Emerson.png";
+import Epiroc from "../Images/OurRecruiters/Epiroc.png";
+import ESPRESSIF from "../Images/OurRecruiters/ESPRESSIF.png";
+import EY from "../Images/OurRecruiters/EY.png";
+import FIS from "../Images/OurRecruiters/FIS.png";
+import Fivetran from "../Images/OurRecruiters/Fivetran.png";
 import highestSalary from "../Images/yearlyHighestSalary.png";
 
 export const placementData = [
@@ -330,7 +368,48 @@ Overall, the consistent success in placements at RBU is a testament to our commi
   {
     id: 5,
     label: "Our Recruiters",
+    heading: "Our Recruiters",
     icon: <GrCertificate style={{ fontSize: 20, marginRight: "0.2rem" }} />,
+    ourRecruiters: [
+      { id: 1, recruiter: ABInBev },
+      { id: 2, recruiter: Accenture },
+      { id: 3, recruiter: AccoliteDigital },
+      { id: 4, recruiter: Adani },
+      { id: 5, recruiter: Afcons },
+      { id: 6, recruiter: Amadeus },
+      { id: 7, recruiter: Amazon },
+      { id: 8, recruiter: Amdocs },
+      { id: 9, recruiter: Aujas },
+      { id: 10, recruiter: Aveva },
+      { id: 11, recruiter: BirlaSoft },
+      { id: 12, recruiter: BNYMellon },
+      { id: 13, recruiter: Bosch },
+      { id: 14, recruiter: Bristlecone },
+      { id: 15, recruiter: CandRSoftware },
+      { id: 16, recruiter: Capgemini },
+      { id: 17, recruiter: Ceat },
+      { id: 18, recruiter: Cerium },
+      { id: 19, recruiter: Cisco },
+      { id: 20, recruiter: Cognizant },
+      { id: 21, recruiter: Cybage },
+      { id: 22, recruiter: DarwinBox },
+      { id: 23, recruiter: DassaulSystem },
+      { id: 24, recruiter: Datametica },
+      { id: 25, recruiter: Decode },
+      { id: 26, recruiter: Deloitte },
+      { id: 27, recruiter: DEShaw },
+      { id: 28, recruiter: Devtron },
+      { id: 29, recruiter: DXC },
+      { id: 30, recruiter: Eaton },
+      { id: 31, recruiter: EdgeVerve },
+      { id: 32, recruiter: EinfoChips },
+      { id: 33, recruiter: Emerson },
+      { id: 34, recruiter: Epiroc },
+      { id: 35, recruiter: ESPRESSIF },
+      { id: 36, recruiter: EY },
+      { id: 37, recruiter: FIS },
+      { id: 38, recruiter: Fivetran },
+    ],
   },
   {
     id: 6,

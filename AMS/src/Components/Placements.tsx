@@ -10,6 +10,8 @@ import { Tabs, Typography } from "antd";
 import { useState } from "react";
 import { colors } from "../Utils/Colors";
 import { placementData } from "../Utils/Data/PlacementData";
+import ComapniesByYear from "./CompaniesByYear";
+import OurRecruiter from "./OurRecruiter";
 
 const { TabPane } = Tabs;
 
@@ -19,6 +21,7 @@ const Placements = () => {
   const handleTabChange = (key: string) => {
     setActiveTab(key);
   };
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-pink-200 to-purple-400 mt-12">
       <Typography
@@ -175,6 +178,8 @@ const Placements = () => {
                 </ul>
               </Typography>
             ))}
+            {item.id === 4 && <ComapniesByYear />}
+            {item.id === 5 && <OurRecruiter />}
           </TabPane>
         ))}
       </Tabs>
